@@ -1,28 +1,18 @@
 import './App.css';
 import GetMeasurements from './components/GetMeasurements';
 import {useState} from 'react'
+import calculateBMI from './utilities';
+
 
 function App() {
   const [showResult, setShowResult] = useState(false)
   const [BMI,setBMI] = useState('')
   const [category,setCategory] = useState('')
 
-  const calculateBMI = (feet,inches,weight) => {
-
-    const tot_inches = parseFloat(feet)*12+parseFloat(inches)
-    const meters = tot_inches*.025
-    const meters_squared = meters**2
-
-    const weight_KG = weight * .45
-    
-    const BMI = Math.round((weight_KG / meters_squared)*10) / 10
-
-    categorizeBMI(BMI)
-    setBMI(BMI)
+  const generateBMI = (feet,inches,weight) => {
+    const result = calculateBMI(feet,inches,weight)
+    setBMI(result)
     setShowResult(true)
-  }
-
-  const categorizeBMI = (BMI) => {
     if (BMI < 18.5) {
       setCategory("underweight")
     } else if (BMI >= 18.5 && BMI <= 24.9) {
@@ -34,11 +24,10 @@ function App() {
     }
   }
 
-
   return (
     <div className="App">
       <h1>BMI Calculator</h1>
-      <GetMeasurements calculate={calculateBMI} />
+      <GetMeasurements calculate={generateBMI} />
 
       { showResult && <>
         <p>Your BMI calcultion is {BMI} </p>
