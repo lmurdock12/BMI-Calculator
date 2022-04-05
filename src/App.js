@@ -26,7 +26,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>BMI Calculator v.1</h1>
+      <h1>BMI Calculator v.1.1</h1>
       <GetMeasurements calculate={generateBMI} />
 
       { showResult && <>
