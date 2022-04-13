@@ -60,7 +60,7 @@ const GetMeasurements = ({ calculate }) => {
             </div>
 
             <div>
-                <input id="butt" name="butt" type="submit" value="submit" />
+                <input id="butt" name="butt" type="submit" value="Calculate BMI" />
             </div>
         </form>      
     </>
