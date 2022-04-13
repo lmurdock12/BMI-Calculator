@@ -5,7 +5,7 @@
 version: 2.1
 orbs:
   node: circleci/node@5.0.2
-  coveralls: coveralls/coveralls@x.y.z
+  coveralls: coveralls/coveralls@1.0.6
 
 jobs:
   build_and_test:
