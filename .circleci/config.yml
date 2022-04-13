@@ -22,14 +22,14 @@ jobs:
           name: Run the server for integration tests
           background: true
       - run:
-          command: yarn run test:e2e
-          name: Run integration tests
-      - run:
           command: yarn run lint
           name: Lint App
       - run:
           command: yarn build
           name: Build app
+      - run:
+          command: yarn run test:e2e
+          name: Run integration tests
       - persist_to_workspace:
           root: ~/project
           paths:
