@@ -14,7 +14,7 @@ describe('Testing App Submission', () => {
 
   it('Renders two paragraph tags', () => {
     const wrapper = mount(<App />)
-    const instance = wrapper.instance();
+
     wrapper.find("#button").simulate("submit");
   
     expect(wrapper.find("p").length).toEqual(2);
