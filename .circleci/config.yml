@@ -5,6 +5,7 @@
 version: 2.1
 orbs:
   node: circleci/node@5.0.2
+  coveralls: coveralls/coveralls@x.y.z
 
 jobs:
   build_and_test:
@@ -30,10 +31,25 @@ jobs:
       - run:
           command: yarn run test:e2e
           name: Run integration tests
+      - run:
+          command: yarn run coveralls
+          name: Run code coverage report and upload to coveralls
       - persist_to_workspace:
           root: ~/project
           paths:
             - .
+  # code_coverage:
+  #   build:
+  #     docker:
+  #       - image: 'cimg/node:17.9.0-browsers'
+  #     steps:
+  #       - checkout
+  #       - run:
+  #         - node/install-packages:
+  #           pkg-manager: yarn
+
+
+
 
 
 workflows:
