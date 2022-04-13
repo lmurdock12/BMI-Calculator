@@ -18,6 +18,9 @@ jobs:
           command: yarn test
           name: Run tests
       - run:
+          command: yarn start
+          name: Run the server for integration tests
+      - run:
           command: yarn run test:e2e
           name: Run integration tests
       - run:
