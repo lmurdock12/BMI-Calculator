@@ -13,16 +13,16 @@ const GetMeasurements = ({ calculate }) => {
             alert("Please fill out all fields")
             return
         }
+        //console.log("Submiting with (f,i,w):",feet,inches,weight)
         calculate(feet,inches,weight)
 
-        console.log(weight)
 
     }
 
   return (
     <>
         <div>Please add body measurements</div>
-        <form onSubmit={onSubmit}>
+        <form id="calculateForm" onSubmit={onSubmit}>
             
             <div>
                 <label> Height: </label>
@@ -60,7 +60,7 @@ const GetMeasurements = ({ calculate }) => {
             </div>
 
             <div>
-                <input type="submit" value="Calculate BMI"/>
+                <input id="butt" name="butt" type="submit" value="submit" />
             </div>
         </form>      
     </>
