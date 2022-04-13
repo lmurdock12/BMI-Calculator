@@ -1,3 +1,5 @@
+[![Coverage Status](https://coveralls.io/repos/github/lmurdock12/BMI-Calculator/badge.svg?branch=circleci-project-setup)](https://coveralls.io/github/lmurdock12/BMI-Calculator?branch=circleci-project-setup)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

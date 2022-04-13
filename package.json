@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
+    "puppeteer": "^13.5.2",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-scripts": "5.0.0",
@@ -14,9 +15,11 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test-old": "react-scripts test",
+    "test": "react-scripts test --testPathIgnorePatterns=.*e2e.test.js --watchAll=false",
+    "test:e2e": "react-scripts test --testPathPattern=.*e2e.test.js$ --watchAll=false",
+    "coverage": "jest --coverage",
+    "coveralls": "jest --coverage && cat ./src/coverage/lcov.info | coveralls",
     "eject": "react-scripts eject",
-    "test": "jest",
     "lint": "eslint ."
   },
   "eslintConfig": {
@@ -38,6 +41,9 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.17.9",
+    "@babel/plugin-transform-runtime": "^7.17.0",
+    "coveralls": "^3.1.1",
     "eslint": "^8.13.0",
     "eslint-plugin-react": "^7.29.4",
     "jest": "^27.5.1"
