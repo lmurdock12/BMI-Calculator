@@ -1,12 +1,23 @@
 /**
  * @jest-environment jsdom
  */
-import { render, screen } from '@testing-library/react';
+
 import App from './App';
 import React from 'react';
+import Adapter from 'enzyme-adapter-react-16';
+import { shallow, configure, mount} from 'enzyme';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/BMI Calculator/i);
-  expect(linkElement).toBeInTheDocument();
+configure({ adapter: new Adapter() });
+global.shallow = shallow;
+
+describe('Testing App Submission', () => {
+
+  it('Renders two paragraph tags', () => {
+    const wrapper = mount(<App />)
+    const instance = wrapper.instance();
+    wrapper.find("#button").simulate("submit");
+  
+    expect(wrapper.find("p").length).toEqual(2);
+  });
+
 });
