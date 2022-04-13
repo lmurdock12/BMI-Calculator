@@ -13,9 +13,9 @@ describe("App.js", () => {
 
     it("contains header text", async () => {
         await page.goto("http://localhost:3000");
-        await page.waitForSelector("app");
-        const text = await page.$eval("app", (e) => e.textContent);
-        expect(test).toContain("BMI");
+        await page.waitForSelector(".App");
+        const text = await page.$eval(".App", (e) => e.textContent);
+        expect(text).toContain("BMI");
 
     });
 
