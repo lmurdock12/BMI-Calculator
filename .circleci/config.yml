@@ -32,7 +32,7 @@ jobs:
           command: yarn run test:e2e
           name: Run integration tests
       - run:
-          command: yarn run coveralls
+          command: COVERALLS_REPO_TOKEN="QL4mmr2qRFKvZ7CGdUSKjNKLCSDifOpQL" yarn run coveralls
           name: Run code coverage report and upload to coveralls
       - persist_to_workspace:
           root: ~/project
