@@ -52,7 +52,7 @@ describe("App.js", () => {
         await page.waitForSelector("#weight");
         
 
-        await page.click('[name="butt"]')
+        await page.click('[name="button"]')
 
         await page.waitForSelector(".BMI");
         await page.waitForSelector(".Category");

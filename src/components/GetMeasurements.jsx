@@ -1,5 +1,5 @@
 import {useState} from 'react'
-
+import React from 'react';
 const GetMeasurements = ({ calculate }) => {
 
     const [feet,setFeet] = useState('1')

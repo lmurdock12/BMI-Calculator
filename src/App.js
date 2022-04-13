@@ -2,7 +2,7 @@ import './App.css';
 import GetMeasurements from './components/GetMeasurements';
 import {useState} from 'react'
 import calculateBMI from './utilities';
-
+import React from 'react';
 
 function App() {
   const [showResult, setShowResult] = useState(false)
